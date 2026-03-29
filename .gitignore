@@ -5,7 +5,7 @@ vendor/
 venv/
 __pycache__/
 *.pyc
-.egg-info/
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
 
