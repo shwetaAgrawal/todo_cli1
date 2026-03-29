@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+scripts/todo-cli
+src/todo_cli/__init__.py
+src/todo_cli/__main__.py
+src/todo_cli/cli.py
+src/todo_cli/models.py
+src/todo_cli/store.py
+src/todo_cli.egg-info/PKG-INFO
+src/todo_cli.egg-info/SOURCES.txt
+src/todo_cli.egg-info/dependency_links.txt
+src/todo_cli.egg-info/requires.txt
+src/todo_cli.egg-info/top_level.txt
+tests/test_cli.py

@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# agent-notes: { ctx: "installed CLI bootstrap script", deps: ["src/todo_cli/cli.py"], state: active, last: "codex@2026-03-29" }
+from pathlib import Path
+import sys
+
+for base in Path(__file__).resolve().parents:
+    repo_src = base / "src"
+    if (repo_src / "todo_cli").exists():
+        sys.path.insert(0, str(repo_src))
+        break
+
+from todo_cli.cli import cli
+
+
+if __name__ == "__main__":
+    cli()

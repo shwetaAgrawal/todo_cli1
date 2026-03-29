@@ -1,0 +1,31 @@
+# agent-notes: { ctx: "CI for lint and tests", deps: [pyproject.toml, tests/test_cli.py], state: active, last: "codex@2026-03-29" }
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        run: uv python install 3.9
+
+      - name: Sync dependencies
+        run: uv sync --all-groups
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: Format check
+        run: uv run ruff format --check .
+
+      - name: Test
+        run: uv run pytest

@@ -1,0 +1,40 @@
+# agent-notes: { ctx: "python package and tool config", deps: [README.md, src/todo_cli/cli.py, tests/test_cli.py], state: active, last: "codex@2026-03-29" }
+[project]
+name = "todo-cli"
+version = "0.1.0"
+description = "Personal CLI todo manager with due dates."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "click>=8.1,<9",
+]
+
+[dependency-groups]
+dev = [
+  "pre-commit>=4.0,<5",
+  "pytest>=8.0,<9",
+  "ruff>=0.11,<0.12",
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+script-files = ["scripts/todo-cli"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]

@@ -1,0 +1,7 @@
+# agent-notes: { ctx: "pre-commit hooks for linting", deps: [pyproject.toml], state: active, last: "codex@2026-03-29" }
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.13
+    hooks:
+      - id: ruff-check
+      - id: ruff-format
